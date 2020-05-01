@@ -6,7 +6,7 @@ $(document).ready(function(){
     console.log(currentTime);
     var timeBlocks = $(".row.time-block");
     console.log(timeBlocks.length);
-    function setCalendarColor(){
+    function setCalendar(){
         for (var i = 0; i < timeBlocks.length; i++){
             var target = $(timeBlocks[i]);
             var timeAttr = target.attr("time");
@@ -19,24 +19,25 @@ $(document).ready(function(){
             if (currentTime == timeAttr){
                 target.find("description").addClass("present");
             }
-        }
+}}
     $(".saveBtn").on("click", function(event){
         event.preventDefault();
-        var parent = this.parentNode;
-        var txt = parent.childNodes[3];
-        var plannerText = txt.value;
-        var key = parent.id;
-        planner[key] = plannerText;
+        var parent = $(this).prevAll(".description").val();
+        console.log(parent);
+        localStorage.setItem("event", JSON.stringify(parent));
+        $(".description").text("event");
+        // var description = parent.filter(".description");
+        // console.log(description);
+
     
-        localStorage.setItem("planner",JSONstringify(planner));
-    })    
+        // localStorage.setItem("planner",JSON.stringify(planner));
     }
-
+    )  
     
 
 
 
-    setCalendarColor();
+    setCalendar();
 
     
     
