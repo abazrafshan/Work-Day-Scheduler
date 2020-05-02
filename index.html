@@ -29,9 +29,12 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
+      <!-- each time block has unique id and time value which are targetted in script file to color code scheduler based on current time -->
         <div id = "9AM" class = "row time-block" time = "9">
             <div class = "col-md-1 hour">9AM</div>
+            <!-- description class targetted in script file to store user input in the text area -->
             <textarea class = "col-md-10 description"></textarea>
+            <!-- save button is targetted in script file to allow user to store value in text area to local storage -->
             <button class= "btn saveBtn col-md-1"><i class = "fas fa-save"></i></button>
           </div>
           <div id = "10AM" class = "row time-block" time = "10">

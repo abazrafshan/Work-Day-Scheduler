@@ -1,13 +1,16 @@
 # Work-Day-Scheduler
-PsuedoCode
+ 
+## Repository 
+This repository generates a work day scheduler application. This repo is available to the public.
 
-Display current day at top of calendar
-Create 9 time blocks of similar size and style
-    -Each time block has section on left that displays the hour, a body for user input, and a button on the right to save events to local storage 
-    -Starts at 9AM, until 5PM
-    -If the current time is past a certian time block, then it is colored grey
-    -If the time block is current time, the block is colored red
-    -If the block is in the future, the block is colored greed
-    -If user licks on a time block, user can input an event
-        -If user selects the save button on the right side of the time block, the event is saved into local storage even when page is refreshed
-    
+## Description
+The demand for productivity applications continues to increase, and this application serves to satisfy some of this demand with a simple interface that allows users to set and track their work day. 
+
+The user is presented with 9 time blocks for each hour between the time range of 9AM - 5PM. The user can type an event for each time block and save the value. These values will be stored in the time blocks even after the page refreshes. 
+
+Building this project was an excellent exercise in jQuery, scope, and localStorage.
+
+## Credits
+This program was created with debugging feedback from fellow bootcampers.
+
+## Screenshot
