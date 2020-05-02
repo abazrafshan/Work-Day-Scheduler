@@ -14,14 +14,14 @@ $(document).ready(function(){
     var currentDay = moment().format('LL');
     $("#currentDay").text(currentDay);
     // set currenttime variable to reflect current hour in military time
-    var currentTime = moment().format('HH'); 
+    // var currentTime = moment().format('HH'); 
+    var currentTime = new Date().getHours();
        
-    console.log(currentTime);
     // target time block divs
     var timeBlocks = $(".row.time-block");
-    console.log(timeBlocks.length);
     // adds past, present, or future class to color code each time block div based on current time
     function setCalendar(){
+        
         // loop that iterates by the number of time block divs in the html file
         for (var i = 0; i < timeBlocks.length; i++){
             // set target variable for each time block div
@@ -34,11 +34,11 @@ $(document).ready(function(){
                 target.find(".description").addClass("past");
             }
             // if current time is equal to the time value in the time block div, then the "present" div is added            
-            else if (currentTime == timeAttr){
+            if (currentTime == timeAttr){
                 target.find(".description").addClass("present");
             }
             // otherwise the "future" div is added to all other time blocks            
-            else {
+            if (currentTime > timeAttr) {
                 target.find(".description").addClass("future");
             }
 }}
